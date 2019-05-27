@@ -107,6 +107,7 @@ let zx = zx0 * zx1 * zx2 * zx3
 
 
 //五星组选120
+binomialCoefficient(8, choose: 5)
 //五星组选60
 //五星组选30
 //五星组选20
@@ -171,7 +172,7 @@ protocol 不定位协议 {}
 extension 不定位协议 {
     
     // 一码
-    func 一码(choose n:Int)->Int {
+    func 一码(_ n:Int)->Int {
         switch n {
         case 0..<10:
             return binomialCoefficient(n, choose: 1)
@@ -181,7 +182,7 @@ extension 不定位协议 {
     }
     
     //二码不定位
-    func 二码(choose n:Int)->Int {
+    func 二码(_ n:Int)->Int {
         switch n {
         case 0..<10:
             return binomialCoefficient(n, choose: 2)
@@ -191,7 +192,7 @@ extension 不定位协议 {
     }
     
     //三码不定位
-    func 三码(choose n:Int)->Int {
+    func 三码(_ n:Int)->Int {
         switch n {
         case 0..<10:
             return binomialCoefficient(n, choose: 3)
@@ -204,7 +205,7 @@ extension 不定位协议 {
 protocol 直选协议 {}
 extension 直选协议 {
     // 复式
-    func 复式(choose n:[Int])->Int {
+    func 直选复式(_ n:[Int])->Int {
         var answers:Int = 1
         for i in n {
             let an = permutations(i, 1)
@@ -213,23 +214,61 @@ extension 直选协议 {
         return answers
     }
 }
-
-protocol 其他协议{}
-extension 其他协议{}
-
-struct 五星组:直选协议 ,不定位协议, 其他协议 {
-    
+protocol 五星组选协议{}
+extension 五星组选协议{
+    func 五星组选120(_ n:Int) -> Int{
+        return binomialCoefficient(n, choose: 5)
+    }
+    func 五星组选60(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选30(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选20(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选10(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选5(_ n:[Int]) -> Int{
+        return 0
+    }
 }
 
-struct 前三组:直选协议 ,不定位协议 {
-    
+protocol 四星组选协议{}
+extension 四星组选协议{
+    func 四星组选24(_ n:Int) -> Int{
+        return 0
+    }
+    func 四星组选12(_ n:Int) -> Int{
+        return 0
+    }
+    func 四星组选6(_ n:Int) -> Int{
+        return 0
+    }
+    func 四星组选4(_ n:Int) -> Int{
+        return 0
+    }
 }
+
 
 struct 时时彩{
-    var 五星:五星组 = 五星组()
+    var 五星:五星结构体 = 五星结构体()
+    var 四星:四星结构体 = 四星结构体()
+    
+    
+    struct 五星结构体:直选协议 ,不定位协议, 五星组选协议 {
+        
+    }
+    struct 四星结构体:直选协议 ,不定位协议, 四星组选协议 {
+        
+    }
+
 }
 
-时时彩().五星.复式(choose: [3,1,2,1,1])
+let 重庆时时彩 = 时时彩()
+let 直选复式 = 重庆时时彩.五星.直选复式([5,1,1,1,1])
 
 
 
