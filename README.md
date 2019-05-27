@@ -1,0 +1,2 @@
+# LotteryAlgorithm
+Lottery Algorithm
