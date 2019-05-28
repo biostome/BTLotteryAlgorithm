@@ -16,12 +16,16 @@
 		D80DB48D229C3E86000DDB4D /* CoreAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB48B229C3E86000DDB4D /* CoreAlgorithm.swift */; };
 		D80DB492229C415D000DDB4D /* UnlocatedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB491229C415D000DDB4D /* UnlocatedProtocol.swift */; };
 		D80DB493229C415D000DDB4D /* UnlocatedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB491229C415D000DDB4D /* UnlocatedProtocol.swift */; };
-		D80DB495229C4908000DDB4D /* DirectElectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB494229C4908000DDB4D /* DirectElectionProtocol.swift */; };
-		D80DB496229C4908000DDB4D /* DirectElectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB494229C4908000DDB4D /* DirectElectionProtocol.swift */; };
-		D80DB498229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB497229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift */; };
-		D80DB499229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB497229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift */; };
-		D80DB49B229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB49A229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift */; };
-		D80DB49C229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB49A229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift */; };
+		D80DB495229C4908000DDB4D /* DirectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB494229C4908000DDB4D /* DirectProtocol.swift */; };
+		D80DB496229C4908000DDB4D /* DirectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DB494229C4908000DDB4D /* DirectProtocol.swift */; };
+		D8D8E72F229D05DA00D030A6 /* GroupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E72E229D05DA00D030A6 /* GroupProtocol.swift */; };
+		D8D8E730229D086D00D030A6 /* GroupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E72E229D05DA00D030A6 /* GroupProtocol.swift */; };
+		D8D8E732229D374F00D030A6 /* GameInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */; };
+		D8D8E733229D374F00D030A6 /* GameInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */; };
+		D8D8E73B229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */; };
+		D8D8E73C229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */; };
+		D8D8E73E229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */; };
+		D8D8E73F229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +48,11 @@
 		D80DB488229C3E09000DDB4D /* BTLotteryAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTLotteryAlgorithm.swift; sourceTree = "<group>"; };
 		D80DB48B229C3E86000DDB4D /* CoreAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAlgorithm.swift; sourceTree = "<group>"; };
 		D80DB491229C415D000DDB4D /* UnlocatedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlocatedProtocol.swift; sourceTree = "<group>"; };
-		D80DB494229C4908000DDB4D /* DirectElectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectElectionProtocol.swift; sourceTree = "<group>"; };
-		D80DB497229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarGroupSelectionProtocal.swift; sourceTree = "<group>"; };
-		D80DB49A229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourStarGroupSelectionProtocal.swift; sourceTree = "<group>"; };
+		D80DB494229C4908000DDB4D /* DirectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectProtocol.swift; sourceTree = "<group>"; };
+		D8D8E72E229D05DA00D030A6 /* GroupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProtocol.swift; sourceTree = "<group>"; };
+		D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoProtocol.swift; sourceTree = "<group>"; };
+		D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAndDoubleProtocol.swift; sourceTree = "<group>"; };
+		D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositioningGallProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +117,11 @@
 				D80DB488229C3E09000DDB4D /* BTLotteryAlgorithm.swift */,
 				D80DB48B229C3E86000DDB4D /* CoreAlgorithm.swift */,
 				D80DB491229C415D000DDB4D /* UnlocatedProtocol.swift */,
-				D80DB494229C4908000DDB4D /* DirectElectionProtocol.swift */,
-				D80DB497229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift */,
-				D80DB49A229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift */,
+				D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */,
+				D80DB494229C4908000DDB4D /* DirectProtocol.swift */,
+				D8D8E72E229D05DA00D030A6 /* GroupProtocol.swift */,
+				D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */,
+				D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -227,12 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D80DB495229C4908000DDB4D /* DirectElectionProtocol.swift in Sources */,
+				D80DB495229C4908000DDB4D /* DirectProtocol.swift in Sources */,
 				D80DB48C229C3E86000DDB4D /* CoreAlgorithm.swift in Sources */,
-				D80DB49B229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift in Sources */,
 				D80DB492229C415D000DDB4D /* UnlocatedProtocol.swift in Sources */,
+				D8D8E73B229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */,
+				D8D8E72F229D05DA00D030A6 /* GroupProtocol.swift in Sources */,
 				D80DB489229C3E09000DDB4D /* BTLotteryAlgorithm.swift in Sources */,
-				D80DB498229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift in Sources */,
+				D8D8E73E229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */,
+				D8D8E732229D374F00D030A6 /* GameInfoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,13 +250,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D8E73C229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */,
+				D8D8E733229D374F00D030A6 /* GameInfoProtocol.swift in Sources */,
 				D80DB493229C415D000DDB4D /* UnlocatedProtocol.swift in Sources */,
-				D80DB496229C4908000DDB4D /* DirectElectionProtocol.swift in Sources */,
+				D8D8E730229D086D00D030A6 /* GroupProtocol.swift in Sources */,
+				D8D8E73F229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */,
+				D80DB496229C4908000DDB4D /* DirectProtocol.swift in Sources */,
 				D80DB47C229C3DC0000DDB4D /* BTLotteryAlgorithmTests.swift in Sources */,
 				D80DB48D229C3E86000DDB4D /* CoreAlgorithm.swift in Sources */,
-				D80DB49C229C4A94000DDB4D /* FourStarGroupSelectionProtocal.swift in Sources */,
 				D80DB48A229C3E09000DDB4D /* BTLotteryAlgorithm.swift in Sources */,
-				D80DB499229C49AA000DDB4D /* FiveStarGroupSelectionProtocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

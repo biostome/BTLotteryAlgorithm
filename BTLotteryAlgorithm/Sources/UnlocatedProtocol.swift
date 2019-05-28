@@ -8,16 +8,15 @@
 
 import Foundation
 
-protocol UnlocatedProtocol {
+protocol UnlocatedFourStarProtocol {
     
 }
-
-extension UnlocatedProtocol {
+extension UnlocatedFourStarProtocol{
     
-    // 一码
+    // 一码不定位
     func unlocatedNumber1(_ n:Int)->Int {
         switch n {
-        case 0..<10:
+        case 1...10:
             return binomialCoefficient(n, choose: 1)
         default:
             return 0
@@ -27,20 +26,30 @@ extension UnlocatedProtocol {
     // 二码不定位
     func unlocatedNumber2(_ n:Int)->Int {
         switch n {
-        case 0..<10:
+        case 1...10:
             return binomialCoefficient(n, choose: 2)
         default:
             return 0
         }
     }
+}
+
+protocol UnlocatedFiveStarProtocol {
+    
+}
+extension UnlocatedFiveStarProtocol {
     
     // 三码不定位
-    func unlocateNumber3(_ n:Int)->Int {
+    func unlocatedNumber3(_ n:Int)->Int {
         switch n {
-        case 0..<10:
+        case 1...10:
             return binomialCoefficient(n, choose: 3)
         default:
             return 0
         }
     }
 }
+
+
+typealias UnlocatedProtocol = UnlocatedFiveStarProtocol & UnlocatedFourStarProtocol
+

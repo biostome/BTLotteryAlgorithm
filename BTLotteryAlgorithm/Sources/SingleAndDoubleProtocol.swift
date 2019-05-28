@@ -1,5 +1,5 @@
 //
-//  DirectElectionProtocol.swift
+//  SingleAndDoubleProtocol.swift
 //  BTLotteryAlgorithm
 //
 //  Created by nathan on 2019/5/28.
@@ -8,14 +8,13 @@
 
 import Foundation
 
-protocol DirectElectionProtocol {
+protocol SingleAndDoubleProtocol {
     
 }
 
-extension DirectElectionProtocol{
-    
-    // 直选复式
-    func directElectionDuplex(_ n:[Int])->Int {
+extension SingleAndDoubleProtocol{
+    // 大小单双
+    func singleAndDouble(_ n:[Int])->Int {
         var answers:Int = 1
         for i in n {
             let an = permutations(i, 1)
@@ -24,4 +23,3 @@ extension DirectElectionProtocol{
         return answers
     }
 }
-
