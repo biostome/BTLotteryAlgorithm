@@ -24,7 +24,7 @@ extension GroupProtocol {
         }
     }
     // 五星组选60
-    func group60(choose n:Int)->Int {
+    func group60(_ n:[Int])->Int {
         return 0
     }
     // 五星组选30

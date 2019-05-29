@@ -31,6 +31,9 @@ class BTLotteryAlgorithmTests: XCTestCase {
         let five_zx120 = fiveStar.group120(10)
         XCTAssertEqual(five_zx120,252)
         
+//        let five_zx60 = fiveStar.group60([5,3])
+//        XCTAssertEqual(five_zx60,1)
+        
         //其他组选...略过
         
         let five_m1bdw = fiveStar.unlocatedNumber1(10)
@@ -62,7 +65,7 @@ class BTLotteryAlgorithmTests: XCTestCase {
         let three_zix = frontThree.directDuplex([2,3,2])
         XCTAssertEqual(three_zix,12)
         
-        // 直选和值有问题
+        // 直选和值
         let three_hez = frontThree.frontThreeDirectSumValue([2,3,4])
         XCTAssertEqual(three_hez,31)
         
@@ -96,7 +99,12 @@ class BTLotteryAlgorithmTests: XCTestCase {
         // 直选和值
         let behindThree_hez = behindThree.frontThreeDirectSumValue([25,26])
         XCTAssertEqual(behindThree_hez,9)
-        // 组选和值有问题
+        
+        // 组选和值
+        var behindThree_grSum:[Int] = []
+        for i in 1...26 {behindThree_grSum.append(i)}
+        let behindThree_zxhz = behindThree.frontThreeGroupSumValue(grSum)
+        XCTAssertEqual(behindThree_zxhz,210)
         
         // 组三
         let behindThree_zut = behindThree.groupThree(10)
