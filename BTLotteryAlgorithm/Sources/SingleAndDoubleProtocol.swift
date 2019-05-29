@@ -15,11 +15,16 @@ protocol SingleAndDoubleProtocol {
 extension SingleAndDoubleProtocol{
     // 大小单双
     func singleAndDouble(_ n:[Int])->Int {
-        var answers:Int = 1
-        for i in n {
-            let an = permutations(i, 1)
-            answers *= an
+        switch n {
+        case [1,1]:
+            var answers:Int = 1
+            for i in n {
+                let an = permutations(i, 1)
+                answers *= an
+            }
+            return answers
+        default:
+            return 0
         }
-        return answers
     }
 }

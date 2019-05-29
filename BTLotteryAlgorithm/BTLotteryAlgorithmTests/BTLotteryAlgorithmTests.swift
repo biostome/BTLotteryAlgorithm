@@ -164,10 +164,24 @@ class BTLotteryAlgorithmTests: XCTestCase {
         
         // MARK: 任选
         // 任选二：直选复式
-        
+//        let chooseAny = TimeLottery.ChooseAny()
+//        let chooseAny_Tow = chooseAny.chooseAnyTwoDirectDuplex([1,1,1,1,1])
+//        XCTAssertEqual(chooseAny_Tow,14)
         // MARK: 大小单双
         // 直选：前二大小单双
         // 直选：后二大小单双
+        let dxds = TimeLottery.singleAndDouble()
+        let dxds_reult = dxds.singleAndDouble([1,1])
+        XCTAssertEqual(dxds_reult,1)
+        
+        let dxds_reult1 = dxds.singleAndDouble([0,0])
+        XCTAssertNotEqual(dxds_reult1, 1)
+        
+        let dxds_reult2 = dxds.singleAndDouble([2,2])
+        XCTAssertNotEqual(dxds_reult2, 1)
+        
+        let dxds_reult3 = dxds.singleAndDouble([1,2])
+        XCTAssertNotEqual(dxds_reult3, 1)
     }
 
     func testPerformanceExample() {

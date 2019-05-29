@@ -26,6 +26,7 @@ extension DirectProtocol {
         var sumValues = [1,3,6,10,15,21,28,36,45,55,63,69,73,75]
         sumValues += sumValues.reversed()
         var answers:Int = 0
+        if n.count > sumValues.count { return answers}
         for i in n {
             answers += sumValues[i]
         }
@@ -38,6 +39,7 @@ extension DirectProtocol {
         let reversed = sumValues.reversed()
         sumValues = sumValues + [10] + reversed
         var answers:Int = 0
+        if n.count > sumValues.count { return answers}
         for i in n {
             answers += sumValues[i]
         }
