@@ -12,10 +12,7 @@ protocol GroupProtocol {
     
 }
 
-// MARK: 五星组选
-protocol GroupFiveStarProtocal {}
-
-extension GroupFiveStarProtocal{
+extension GroupProtocol {
     
     // 五星组选120
     func group120(_ n:Int)->Int {
@@ -46,13 +43,6 @@ extension GroupFiveStarProtocal{
     func group5(choose n:Int)->Int {
         return 0
     }
-}
-
-// MARK: 四星组选
-protocol GroupFourStarProtocal {}
-
-extension GroupFourStarProtocal{
-    
     // 四星组选24
     func group24(_ n:Int)->Int {
         return 0
@@ -65,24 +55,36 @@ extension GroupFourStarProtocal{
     func group6(choose n:Int)->Int {
         return 0
     }
-    // 四星组选4
+    /// 四星组选4
     func group4(choose n:Int)->Int {
         return 0
     }
-}
-
-// MARK: 组选和值
-protocol GroupSumValueProtocol {}
-extension GroupSumValueProtocol{
-    // 组选和值
-    func groupSumValue(_ n:[Int])->Int {
-        return 0
+    
+    /// 前三/后三组选和值
+    func frontThreeGroupSumValue(_ n:[Int])->Int {
+        var sumValues = [1,2,2,4,5,6,8,10,11,13,14,14,15]
+        let reversed = sumValues.reversed()
+        sumValues = sumValues + reversed
+        var answers:Int = 0
+        if n.count > sumValues.count { return answers}
+        for i in n {
+            answers += sumValues[i-1]
+        }
+        return answers
     }
-}
-
-// MARK: 组三/组六
-protocol GroupNumberProtocol {}
-extension GroupNumberProtocol{
+    
+    /// 前二/后二组选和值
+    func frontTwoGroupSumValue(_ n:[Int])->Int {
+        var sumValues = [1,1,2,2,3,3,4,4]
+        let reversed = sumValues.reversed()
+        sumValues = sumValues + [5] + reversed
+        var answers:Int = 0
+        if n.count > sumValues.count { return answers}
+        for i in n {
+            answers += sumValues[i-1]
+        }
+        return answers
+    }
     
     // 组三
     func groupThree(_ n:Int)->Int {
@@ -103,11 +105,7 @@ extension GroupNumberProtocol{
             return 0
         }
     }
-}
-
-// MARK: 组选复式
-protocol GroupDuplexProtocol {}
-extension GroupDuplexProtocol{
+    
     // 组选复式
     func groupDuplex(_ n:Int)->Int {
         switch n {

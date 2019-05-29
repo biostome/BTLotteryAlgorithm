@@ -9,58 +9,23 @@
 import Foundation
 
 class TimeLottery {
-    
-    lazy var fiveStar: FiveStar = {
-        return FiveStar()
-    }()
-    
-    lazy var fourStar: FourStar = {
-        return FourStar()
-    }()
-    
-    lazy var frontThree: FrontThree = {
-        return FrontThree()
-    }()
-    
-    lazy var behindThree: BehindThree = {
-        return BehindThree()
-    }()
-    
-    lazy var frontTwos: FrontTwo = {
-        return FrontTwo()
-    }()
-    
-    lazy var behindTwo: BehindTwo = {
-        return BehindTwo()
-    }()
-    
-    lazy var oneStar: OneStar = {
-        return OneStar()
-    }()
-    
-    lazy var chooseAny: ChooseAny = {
-        return ChooseAny()
-    }()
-    
     // 五星
-    struct FiveStar:UnlocatedProtocol,DirectProtocol,GroupFiveStarProtocal {}
+    struct FiveStar:UnlocatedProtocol,DirectProtocol,GroupProtocol {}
     // 四星
-    struct FourStar:UnlocatedFourStarProtocol,DirectDuplexProtocol,GroupFourStarProtocal {}
+    struct FourStar:UnlocatedProtocol,DirectProtocol {}
     // 前三
-    struct FrontThree:DirectProtocol,GroupSumValueProtocol,GroupNumberProtocol,GroupFourStarProtocal {}
+    struct FrontThree:UnlocatedProtocol,DirectProtocol,GroupProtocol {}
     // 后三
-    struct BehindThree:DirectDuplexProtocol,GroupSumValueProtocol,GroupNumberProtocol,GroupFourStarProtocal {}
+    struct BehindThree:UnlocatedProtocol,DirectProtocol,GroupProtocol {}
     // 前二
-    struct FrontTwo:DirectDuplexProtocol,GroupDuplexProtocol,GroupSumValueProtocol {}
+    struct FrontTwo:DirectProtocol,GroupProtocol {}
     // 后二
-    struct BehindTwo:DirectDuplexProtocol,GroupDuplexProtocol,GroupSumValueProtocol {}
+    struct BehindTwo:DirectProtocol,GroupProtocol {}
     // 一星
     struct OneStar:LocatedProtocol {}
     // 任选
-    struct ChooseAny {}
+    struct ChooseAny:ChooseAnyProtocol {}
     // 大小单双
     struct singleAndDouble:SingleAndDoubleProtocol{}
 
 }
-
-

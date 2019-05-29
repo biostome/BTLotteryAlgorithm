@@ -24,8 +24,10 @@
 		D8D8E733229D374F00D030A6 /* GameInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */; };
 		D8D8E73B229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */; };
 		D8D8E73C229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */; };
-		D8D8E73E229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */; };
-		D8D8E73F229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */; };
+		D8D8E73E229D6C7200D030A6 /* LocatedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73D229D6C7200D030A6 /* LocatedProtocol.swift */; };
+		D8D8E73F229D6C7200D030A6 /* LocatedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E73D229D6C7200D030A6 /* LocatedProtocol.swift */; };
+		D8D8E741229E681100D030A6 /* ChooseAnyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E740229E681100D030A6 /* ChooseAnyProtocol.swift */; };
+		D8D8E742229E681100D030A6 /* ChooseAnyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E740229E681100D030A6 /* ChooseAnyProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,8 @@
 		D8D8E72E229D05DA00D030A6 /* GroupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProtocol.swift; sourceTree = "<group>"; };
 		D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoProtocol.swift; sourceTree = "<group>"; };
 		D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAndDoubleProtocol.swift; sourceTree = "<group>"; };
-		D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositioningGallProtocol.swift; sourceTree = "<group>"; };
+		D8D8E73D229D6C7200D030A6 /* LocatedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatedProtocol.swift; sourceTree = "<group>"; };
+		D8D8E740229E681100D030A6 /* ChooseAnyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAnyProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +120,11 @@
 				D80DB488229C3E09000DDB4D /* BTLotteryAlgorithm.swift */,
 				D80DB48B229C3E86000DDB4D /* CoreAlgorithm.swift */,
 				D80DB491229C415D000DDB4D /* UnlocatedProtocol.swift */,
-				D8D8E73D229D6C7200D030A6 /* PositioningGallProtocol.swift */,
+				D8D8E73D229D6C7200D030A6 /* LocatedProtocol.swift */,
 				D80DB494229C4908000DDB4D /* DirectProtocol.swift */,
 				D8D8E72E229D05DA00D030A6 /* GroupProtocol.swift */,
 				D8D8E73A229D4C8200D030A6 /* SingleAndDoubleProtocol.swift */,
+				D8D8E740229E681100D030A6 /* ChooseAnyProtocol.swift */,
 				D8D8E731229D374F00D030A6 /* GameInfoProtocol.swift */,
 			);
 			path = Sources;
@@ -239,9 +243,10 @@
 				D80DB48C229C3E86000DDB4D /* CoreAlgorithm.swift in Sources */,
 				D80DB492229C415D000DDB4D /* UnlocatedProtocol.swift in Sources */,
 				D8D8E73B229D4C8200D030A6 /* SingleAndDoubleProtocol.swift in Sources */,
+				D8D8E741229E681100D030A6 /* ChooseAnyProtocol.swift in Sources */,
 				D8D8E72F229D05DA00D030A6 /* GroupProtocol.swift in Sources */,
 				D80DB489229C3E09000DDB4D /* BTLotteryAlgorithm.swift in Sources */,
-				D8D8E73E229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */,
+				D8D8E73E229D6C7200D030A6 /* LocatedProtocol.swift in Sources */,
 				D8D8E732229D374F00D030A6 /* GameInfoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +259,8 @@
 				D8D8E733229D374F00D030A6 /* GameInfoProtocol.swift in Sources */,
 				D80DB493229C415D000DDB4D /* UnlocatedProtocol.swift in Sources */,
 				D8D8E730229D086D00D030A6 /* GroupProtocol.swift in Sources */,
-				D8D8E73F229D6C7200D030A6 /* PositioningGallProtocol.swift in Sources */,
+				D8D8E73F229D6C7200D030A6 /* LocatedProtocol.swift in Sources */,
+				D8D8E742229E681100D030A6 /* ChooseAnyProtocol.swift in Sources */,
 				D80DB496229C4908000DDB4D /* DirectProtocol.swift in Sources */,
 				D80DB47C229C3DC0000DDB4D /* BTLotteryAlgorithmTests.swift in Sources */,
 				D80DB48D229C3E86000DDB4D /* CoreAlgorithm.swift in Sources */,

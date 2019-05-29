@@ -8,11 +8,10 @@
 
 import Foundation
 
-protocol UnlocatedFourStarProtocol {
+protocol UnlocatedProtocol {
     
 }
-extension UnlocatedFourStarProtocol{
-    
+extension UnlocatedProtocol{
     // 一码不定位
     func unlocatedNumber1(_ n:Int)->Int {
         switch n {
@@ -32,12 +31,6 @@ extension UnlocatedFourStarProtocol{
             return 0
         }
     }
-}
-
-protocol UnlocatedFiveStarProtocol {
-    
-}
-extension UnlocatedFiveStarProtocol {
     
     // 三码不定位
     func unlocatedNumber3(_ n:Int)->Int {
@@ -50,6 +43,4 @@ extension UnlocatedFiveStarProtocol {
     }
 }
 
-
-typealias UnlocatedProtocol = UnlocatedFiveStarProtocol & UnlocatedFourStarProtocol
 

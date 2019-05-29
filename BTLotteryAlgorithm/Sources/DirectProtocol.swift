@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol DirectDuplexProtocol {}
+protocol DirectProtocol {}
 
-extension DirectDuplexProtocol {
+extension DirectProtocol {
     /// 直选复式
     func directDuplex(_ n: [Int]) -> Int {
         var answers:Int = 1
@@ -20,18 +20,27 @@ extension DirectDuplexProtocol {
         }
         return answers
     }
-}
-
-protocol DirectSumValueProtocol {
-
-}
-
-extension DirectSumValueProtocol{
-    /// 直选和值
-    func directSumValue(_ n: [Int]) -> Int {
-        return 0
+    
+    /// 前三\后三直选和值
+    func frontThreeDirectSumValue(_ n: [Int]) -> Int {
+        var sumValues = [1,3,6,10,15,21,28,36,45,55,63,69,73,75]
+        sumValues += sumValues.reversed()
+        var answers:Int = 0
+        for i in n {
+            answers += sumValues[i]
+        }
+        return answers
+    }
+    
+    /// 前二/后二直选和值
+    func frontTwoDirectSumValue(_ n: [Int]) -> Int {
+        var sumValues = [1,2,3,4,5,6,7,8,9]
+        let reversed = sumValues.reversed()
+        sumValues = sumValues + [10] + reversed
+        var answers:Int = 0
+        for i in n {
+            answers += sumValues[i]
+        }
+        return answers
     }
 }
-
-typealias DirectProtocol = DirectSumValueProtocol & DirectDuplexProtocol
-

@@ -22,127 +22,152 @@ class BTLotteryAlgorithmTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let cqssc = TimeLottery()
         
         // MARK: 五星
-        let five_zx = cqssc.fiveStar.directDuplex([5,1,1,1,1])
+        let fiveStar = TimeLottery.FiveStar()
+        let five_zx = fiveStar.directDuplex([5,1,1,1,1])
         XCTAssertEqual(five_zx, 5)
         
-        let five_zx120 = cqssc.fiveStar.group120(10)
+        let five_zx120 = fiveStar.group120(10)
         XCTAssertEqual(five_zx120,252)
         
         //其他组选...略过
         
-        let five_m1bdw = cqssc.fiveStar.unlocatedNumber1(10)
+        let five_m1bdw = fiveStar.unlocatedNumber1(10)
         XCTAssertEqual(five_m1bdw,10)
         
-        let five_m2bdw = cqssc.fiveStar.unlocatedNumber2(10)
+        let five_m2bdw = fiveStar.unlocatedNumber2(10)
         XCTAssertEqual(five_m2bdw,45)
         
-        let five_m3bdw = cqssc.fiveStar.unlocatedNumber3(10)
+        let five_m3bdw = fiveStar.unlocatedNumber3(10)
         XCTAssertEqual(five_m3bdw,120)
         
         
         // MARK: 四星
-        let four_zix = cqssc.fourStar.directDuplex([2,3,2,1])
+        let fourStar = TimeLottery.FourStar()
+        let four_zix = fourStar.directDuplex([2,3,2,1])
         XCTAssertEqual(four_zix,12)
         
         //四星组选...略过
         
-        let four_m1bdw = cqssc.fourStar.unlocatedNumber1(10)
+        let four_m1bdw = fourStar.unlocatedNumber1(10)
         XCTAssertEqual(four_m1bdw,10)
         
-        let four_m2bdw = cqssc.fourStar.unlocatedNumber2(10)
+        let four_m2bdw = fourStar.unlocatedNumber2(10)
         XCTAssertEqual(four_m2bdw,45)
         
         // MARK: 前三
         
-        let three_zix = cqssc.frontThree.directDuplex([2,3,2])
+        let frontThree = TimeLottery.FrontThree()
+        let three_zix = frontThree.directDuplex([2,3,2])
         XCTAssertEqual(three_zix,12)
         
         // 直选和值有问题
-//        let three_hez = cqssc.frontThree.directSumValue([2,3,2])
-//        XCTAssertEqual(three_zix,12)
-        // 组选和值有问题
+        let three_hez = frontThree.frontThreeDirectSumValue([2,3,4])
+        XCTAssertEqual(three_hez,31)
+        
+        var grSum:[Int] = []
+        for i in 1...26 {grSum.append(i)}
+        let three_zxhz = frontThree.frontThreeGroupSumValue(grSum)
+        XCTAssertEqual(three_zxhz,210)
         
         // 组三
-        let three_zut = cqssc.frontThree.groupThree(10)
+        let three_zut = frontThree.groupThree(10)
         XCTAssertEqual(three_zut,90)
         
         // 组六
-        let three_zus = cqssc.frontThree.groupSix(10)
+        let three_zus = frontThree.groupSix(10)
         XCTAssertEqual(three_zus,120)
         
         //不定式1码
-        let three_m1bdw = cqssc.fourStar.unlocatedNumber1(10)
+        let three_m1bdw = fourStar.unlocatedNumber1(10)
         XCTAssertEqual(three_m1bdw,10)
         
         //不定式2码
-        let three_m2bdw = cqssc.fourStar.unlocatedNumber2(10)
+        let three_m2bdw = fourStar.unlocatedNumber2(10)
         XCTAssertEqual(three_m2bdw,45)
         
         // MARK: 后三
         
-        let behindThree_zix = cqssc.behindThree.directDuplex([2,3,2])
+        let behindThree = TimeLottery.BehindThree()
+        let behindThree_zix = behindThree.directDuplex([2,3,2])
         XCTAssertEqual(behindThree_zix,12)
         
-        // 直选和值有问题
-        //        let three_hez = cqssc.frontThree.directSumValue([2,3,2])
-        //        XCTAssertEqual(three_zix,12)
+        // 直选和值
+        let behindThree_hez = behindThree.frontThreeDirectSumValue([25,26])
+        XCTAssertEqual(behindThree_hez,9)
         // 组选和值有问题
         
         // 组三
-        let behindThree_zut = cqssc.frontThree.groupThree(10)
+        let behindThree_zut = behindThree.groupThree(10)
         XCTAssertEqual(behindThree_zut,90)
         
         // 组六
-        let behindThree_zus = cqssc.frontThree.groupSix(10)
+        let behindThree_zus = behindThree.groupSix(10)
         XCTAssertEqual(behindThree_zus,120)
         
         //不定式1码
-        let behindThree_m1bdw = cqssc.fourStar.unlocatedNumber1(10)
+        let behindThree_m1bdw = behindThree.unlocatedNumber1(10)
         XCTAssertEqual(behindThree_m1bdw,10)
         
         //不定式2码
-        let behindThree_m2bdw = cqssc.fourStar.unlocatedNumber2(10)
+        let behindThree_m2bdw = behindThree.unlocatedNumber2(10)
         XCTAssertEqual(behindThree_m2bdw,45)
         
         // MARK: 前二
+        let frontTwos = TimeLottery.FrontTwo()
         // 直选复式
-        let frontTwo_zix = cqssc.frontTwos.directDuplex([10,10])
+        let frontTwo_zix = frontTwos.directDuplex([10,10])
         XCTAssertEqual(frontTwo_zix,100)
         
-        // 直选：直选和值 略 算法不会
+        // 直选：直选和值
+        let frontTow_hezhi = frontTwos.frontTwoDirectSumValue([0,1,2])
+        XCTAssertEqual(frontTow_hezhi,6)
         
         //组选：复式
-        let frontTwo_zux = cqssc.frontTwos.groupDuplex(8)
+        let frontTwo_zux = frontTwos.groupDuplex(8)
         XCTAssertEqual(frontTwo_zux,28)
         
-        // 组选：组选和值... 略
+        
+        var frontTwo_grSum:[Int] = []
+        for i in 1...8 {frontTwo_grSum.append(i)}
+        let frontTwo_zxhz = frontThree.frontTwoGroupSumValue(frontTwo_grSum)
+        XCTAssertEqual(frontTwo_zxhz,20)
         
         
         // MARK: 后二
+        let behindTwo = TimeLottery.BehindTwo()
         // 直选复式
-        let behindTwo_zix = cqssc.frontTwos.directDuplex([10,10])
+        let behindTwo_zix = behindTwo.directDuplex([10,10])
         XCTAssertEqual(behindTwo_zix,100)
         
-        // 直选：直选和值 略 算法不会
+        // 直选：直选和值
+        let behindTow_hezhi = behindTwo.frontTwoDirectSumValue([16,17,18])
+        XCTAssertEqual(behindTow_hezhi,6)
         
         //组选：复式
-        let behindTwo_zux = cqssc.frontTwos.groupDuplex(8)
+        let behindTwo_zux = behindTwo.groupDuplex(8)
         XCTAssertEqual(behindTwo_zux,28)
         
-        // 组选：组选和值... 略
+        // 后二组选和值
+        var behindTwo_grSum:[Int] = []
+        for i in 1...8 {behindTwo_grSum.append(i)}
+        let behindTwo_zxhz = frontThree.frontTwoGroupSumValue(behindTwo_grSum)
+        XCTAssertEqual(behindTwo_zxhz,20)
         
         // MARK: 一星
+        let oneStar = TimeLottery.OneStar()
         // 直选：定位胆
-        let oneStar_DWD = cqssc.oneStar.locatedGall([10,10,10,10,10])
+        let oneStar_DWD = oneStar.locatedGall([10,10,10,10,10])
         XCTAssertEqual(oneStar_DWD,50)
         
         
         // MARK: 任选
         // 任选二：直选复式
-        let chooseAny_zix = cqssc.chooseAny
+        
+        // MARK: 大小单双
+        // 直选：前二大小单双
+        // 直选：后二大小单双
     }
 
     func testPerformanceExample() {
