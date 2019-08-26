@@ -12,9 +12,9 @@ func factorial(_ n: Int) -> Int {
     }
     return result
 }
-factorial(3)   // returns 120
+let fa = factorial(3)   // returns 6
 
-// 不重复排列
+// 排列
 func permutations(_ n: Int, _ k: Int) -> Int {
     var n = n
     var answer = n
@@ -24,29 +24,21 @@ func permutations(_ n: Int, _ k: Int) -> Int {
     }
     return answer
 }
-let an0 = permutations(4, 2)   // returns 60
+let per = permutations(4, 2)   // returns 12
 
-
-/// 组合数计算
-// 算法1
-func quickBinomialCoefficient(_ n: Int, choose k: Int) -> Int {
-    var result = 1
-    for i in 0..<k {
-        result *= (n - i)
-        result /= (i + 1)
-    }
-    return result
-}
-quickBinomialCoefficient(7, choose: 5)     // prints 28
-
-// 算法2
+// 组合数算法1
 func combinations(_ n: Int, choose k: Int) -> Int {
     return permutations(n, k) / factorial(k)
 }
-combinations(7, choose: 5)    // prints 98280
+let combinations = combinations(7, choose: 5) //print 21
 
+// 组合数算法2
+func combinationes(_ n: Int, choose k: Int) -> Int {
+    return factorial(k + n - 1) / (factorial(k) * factorial(n - 1))
+}
+let combinations = combinationes(7, choose: 5)  //print 21
 
-// 算法3 速度最快
+// 组合数算法4 二项式系数
 func binomialCoefficient(_ n: Int, choose k: Int) -> Int {
     var bc = Array(repeating: Array(repeating: 0, count: n + 1), count: n + 1)
     
@@ -65,16 +57,18 @@ func binomialCoefficient(_ n: Int, choose k: Int) -> Int {
     
     return bc[n][k]
 }
-binomialCoefficient(7, choose: 5)   // prints a very large number
+let combinations = binomialCoefficient(7, choose: 5) //print 21
 
-// 算法4
-func combinationes(_ n: Int, choose k: Int) -> Int {
-    return factorial(k + n - 1) / (factorial(k) * factorial(n - 1))
-//    return permutations(n, k) / factorial(k)
+// 组合数算法3 快速二项式系数
+func quickBinomialCoefficient(_ n: Int, choose k: Int) -> Int {
+    var result = 1
+    for i in 0..<k {
+        result *= (n - i)
+        result /= (i + 1)
+    }
+    return result
 }
-combinationes(10, choose: 5)    // prints 98280
-
-
+let combinations = quickBinomialCoefficient(7, choose: 5)  //print 21
 
 /********************重庆时时彩**********************/
 //五星直选复式
