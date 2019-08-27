@@ -30,36 +30,9 @@ let per = permutations(4, 2)   // returns 12
 func combinations(_ n: Int, choose k: Int) -> Int {
     return permutations(n, k) / factorial(k)
 }
-let combinations = combinations(7, choose: 5) //print 21
+combinations(7, choose: 5) //print 21
 
-// 组合数算法2
-func combinationes(_ n: Int, choose k: Int) -> Int {
-    return factorial(k + n - 1) / (factorial(k) * factorial(n - 1))
-}
-let combinations = combinationes(7, choose: 5)  //print 21
-
-// 组合数算法4 二项式系数
-func binomialCoefficient(_ n: Int, choose k: Int) -> Int {
-    var bc = Array(repeating: Array(repeating: 0, count: n + 1), count: n + 1)
-    
-    for i in 0...n {
-        bc[i][0] = 1
-        bc[i][i] = 1
-    }
-    
-    if n > 0 {
-        for i in 1...n {
-            for j in 1..<i {
-                bc[i][j] = bc[i - 1][j - 1] + bc[i - 1][j]
-            }
-        }
-    }
-    
-    return bc[n][k]
-}
-let combinations = binomialCoefficient(7, choose: 5) //print 21
-
-// 组合数算法3 快速二项式系数
+// 组合数算法2 快速二项式系数
 func quickBinomialCoefficient(_ n: Int, choose k: Int) -> Int {
     var result = 1
     for i in 0..<k {
@@ -68,7 +41,25 @@ func quickBinomialCoefficient(_ n: Int, choose k: Int) -> Int {
     }
     return result
 }
-let combinations = quickBinomialCoefficient(7, choose: 5)  //print 21
+quickBinomialCoefficient(7, choose: 5)  //print 21
+
+// 组合数算法3 二项式系数
+func binomialCoefficient(_ n: Int, choose k: Int) -> Int {
+    var bc = Array(repeating: Array(repeating: 0, count: n + 1), count: n + 1)
+    for i in 0...n {
+        bc[i][0] = 1
+        bc[i][i] = 1
+    }
+    if n > 0 {
+        for i in 1...n {
+            for j in 1..<i {
+                bc[i][j] = bc[i - 1][j - 1] + bc[i - 1][j]
+            }
+        }
+    }
+    return bc[n][k]
+}
+binomialCoefficient(7, choose: 5) //print 21
 
 /********************重庆时时彩**********************/
 //五星直选复式
