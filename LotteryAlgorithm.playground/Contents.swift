@@ -12,7 +12,6 @@ func factorial(_ n: Int) -> Int {
     }
     return result
 }
-let fa = factorial(3)   // returns 6
 
 // 排列
 func permutations(_ n: Int, _ k: Int) -> Int {
@@ -24,13 +23,11 @@ func permutations(_ n: Int, _ k: Int) -> Int {
     }
     return answer
 }
-let per = permutations(4, 2)   // returns 12
 
 // 组合数算法1
 func combinations(_ n: Int, choose k: Int) -> Int {
     return permutations(n, k) / factorial(k)
 }
-combinations(7, choose: 5) //print 21
 
 // 组合数算法2 快速二项式系数
 func quickBinomialCoefficient(_ n: Int, choose k: Int) -> Int {
@@ -41,7 +38,6 @@ func quickBinomialCoefficient(_ n: Int, choose k: Int) -> Int {
     }
     return result
 }
-quickBinomialCoefficient(7, choose: 5)  //print 21
 
 // 组合数算法3 二项式系数
 func binomialCoefficient(_ n: Int, choose k: Int) -> Int {
@@ -59,8 +55,164 @@ func binomialCoefficient(_ n: Int, choose k: Int) -> Int {
     }
     return bc[n][k]
 }
-binomialCoefficient(7, choose: 5) //print 21
 
+/*五种算法使用*/
+let factori = factorial(3)   // returns 6
+let permuta = permutations(4, 2)   // returns 12
+let combin = combinations(7, choose: 5) //print 21
+let quickBinomial = quickBinomialCoefficient(7, choose: 5)  //print 21
+let binomial = binomialCoefficient(7, choose: 5) //print 21
+
+protocol 时时彩不定位协议 {}
+extension 时时彩不定位协议 {
+    func 一码(_ n:Int)->Int {
+        switch n {
+        case 0..<10:
+            return binomialCoefficient(n, choose: 1)
+        default:
+            return 0
+        }
+    }
+    
+    func 二码(_ n:Int)->Int {
+        switch n {
+        case 0..<10:
+            return binomialCoefficient(n, choose: 2)
+        default:
+            return 0
+        }
+    }
+    
+    func 三码(_ n:Int)->Int {
+        switch n {
+        case 0..<10:
+            return binomialCoefficient(n, choose: 3)
+        default:
+            return 0
+        }
+    }
+}
+
+protocol 时时彩直选复式协议 {}
+extension 时时彩直选复式协议 {
+    func 直选复式(_ n:[Int])->Int {
+        var answers:Int = 1
+        for i in n {
+            let an = permutations(i, 1)
+            answers *= an
+        }
+        return answers
+    }
+}
+
+protocol 时时彩直选组合协议 {}
+extension 时时彩直选组合协议 {
+    func 直选组合(_ n:[Int])->Int {
+        return 0;
+    }
+}
+
+protocol 时时彩五星组选协议{}
+extension 时时彩五星组选协议{
+    func 五星组选120(_ n:Int) -> Int{
+        return binomialCoefficient(n, choose: 5)
+    }
+    func 五星组选60(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选30(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选20(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选10(_ n:[Int]) -> Int{
+        return 0
+    }
+    func 五星组选5(_ n:[Int]) -> Int{
+        return 0
+    }
+    
+}
+
+protocol 时时彩四星组选协议{}
+extension 时时彩四星组选协议{
+    
+    func 四星组选24(_ n:Int) -> Int{
+        return 0
+    }
+    func 四星组选12(_ n:Int) -> Int{
+        return 0
+    }
+    func 四星组选6(_ n:Int) -> Int{
+        return 0
+    }
+    func 四星组选4(_ n:Int) -> Int{
+        return 0
+    }
+}
+
+protocol 时时彩三星组选协议{}
+extension 时时彩三星组选协议{
+    
+    func 三星组选三(_ n:Int) -> Int{
+        return 0
+    }
+    func 三星组选六(_ n:Int) -> Int{
+        return 0
+    }
+}
+
+protocol 时时彩和值协议{}
+extension 时时彩和值协议{
+    func 和值(_ n:[Int]) -> Int{
+        return 0
+    }
+}
+
+protocol 时时彩跨度协议{}
+extension 时时彩跨度协议{
+    func 跨度(_ n:[Int]) -> Int{
+        return 0
+    }
+}
+
+protocol 时时彩和值尾数{}
+extension 时时彩和值尾数{
+    func 和值尾数(_ n:[Int]) -> Int{
+        return 0
+    }
+}
+
+
+
+typealias 时时彩五星直选协议 = 时时彩直选复式协议&时时彩直选组合协议
+struct 五星玩法:时时彩五星直选协议,时时彩五星组选协议{
+    
+}
+
+typealias 时时彩四星直选协议 = 时时彩直选复式协议&时时彩直选组合协议
+struct 四星玩法:时时彩四星直选协议,时时彩四星组选协议{
+    
+}
+
+typealias 时时彩前三直选协议 = 时时彩直选复式协议&时时彩直选组合协议&时时彩和值协议&时时彩跨度协议
+struct 前三玩法:时时彩前三直选协议,时时彩三星组选协议,时时彩和值尾数{
+    
+}
+
+struct 时时彩{
+    var 五星:五星玩法 = 五星玩法()
+    var 四星:四星玩法 = 四星玩法()
+}
+
+let 重庆时时彩 = 时时彩()
+let 直选复式 = 重庆时时彩.五星.直选复式([5,1,1,1,1])
+
+
+
+
+/*
 /********************重庆时时彩**********************/
 //五星直选复式
 let an = permutations(5, 1)
@@ -151,6 +303,7 @@ binomialCoefficient(6, choose: 1)
 //定位胆
 //注数 = 一个号码球为一注
 // max number is 50 bet
+let n = 9;
 let 万位 = permutations(n, 1) //n<10
 let 千位 = permutations(n, 1) //n<10
 let 百位 = permutations(n, 1) //n<10
@@ -160,9 +313,9 @@ let 总注数 = 万位 + 千位 + 百位 + 十位 + 个位
 
 //前二
 //前二直选
-let 万位 = permutations(n, 1) //n<10
-let 千位 = permutations(n, 1) //n<10
-let 总注数 = 万位 * 千位
+let 前二万位 = permutations(n, 1) //n<10
+let 前二千位 = permutations(n, 1) //n<10
+let 前二总注数 = 万位 * 千位
 
 // 直选和值 特殊处理
 
@@ -330,115 +483,7 @@ func 五星直选单式(_ n:[Int]) -> Int {
         }
         return answers 
 }
-
+*/
 
 /******************testing**************************/
-
-//let 时时彩五星直选复式 = ssc.wx.zix.fs(choosed:6)
-//let 时时彩五星一码不定位 = ssc.wx.bdw.m1(choosed:6)
-
-protocol 不定位协议 {}
-extension 不定位协议 {
-    
-    // 一码
-    func 一码(_ n:Int)->Int {
-        switch n {
-        case 0..<10:
-            return binomialCoefficient(n, choose: 1)
-        default:
-            return 0
-        }
-    }
-    
-    //二码不定位
-    func 二码(_ n:Int)->Int {
-        switch n {
-        case 0..<10:
-            return binomialCoefficient(n, choose: 2)
-        default:
-            return 0
-        }
-    }
-    
-    //三码不定位
-    func 三码(_ n:Int)->Int {
-        switch n {
-        case 0..<10:
-            return binomialCoefficient(n, choose: 3)
-        default:
-            return 0
-        }
-    }
-}
-
-protocol 直选协议 {}
-extension 直选协议 {
-    // 复式
-    func 直选复式(_ n:[Int])->Int {
-        var answers:Int = 1
-        for i in n {
-            let an = permutations(i, 1)
-            answers *= an
-        }
-        return answers
-    }
-}
-protocol 五星组选协议{}
-extension 五星组选协议{
-    func 五星组选120(_ n:Int) -> Int{
-        return binomialCoefficient(n, choose: 5)
-    }
-    func 五星组选60(_ n:[Int]) -> Int{
-        return 0
-    }
-    func 五星组选30(_ n:[Int]) -> Int{
-        return 0
-    }
-    func 五星组选20(_ n:[Int]) -> Int{
-        return 0
-    }
-    func 五星组选10(_ n:[Int]) -> Int{
-        return 0
-    }
-    func 五星组选5(_ n:[Int]) -> Int{
-        return 0
-    }
-}
-
-protocol 四星组选协议{}
-extension 四星组选协议{
-    func 四星组选24(_ n:Int) -> Int{
-        return 0
-    }
-    func 四星组选12(_ n:Int) -> Int{
-        return 0
-    }
-    func 四星组选6(_ n:Int) -> Int{
-        return 0
-    }
-    func 四星组选4(_ n:Int) -> Int{
-        return 0
-    }
-}
-
-
-struct 时时彩{
-    var 五星:五星结构体 = 五星结构体()
-    var 四星:四星结构体 = 四星结构体()
-    
-    
-    struct 五星结构体:直选协议 ,不定位协议, 五星组选协议 {
-        
-    }
-    struct 四星结构体:直选协议 ,不定位协议, 四星组选协议 {
-        
-    }
-
-}
-
-let 重庆时时彩 = 时时彩()
-let 直选复式 = 重庆时时彩.五星.直选复式([5,1,1,1,1])
-
-
-
 
